@@ -18,7 +18,9 @@ function Logo() {
 
 function Form() {
 
-  function handleSubmit() {}
+  function handleSubmit(e) {
+    e.preventDefault();
+  }
 
   return (
   <form className="add-form" onSubmit={handleSubmit}>
