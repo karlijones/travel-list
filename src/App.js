@@ -25,6 +25,8 @@ function Form() {
       <option value={2}>2</option>
       <option value={3}>3</option>
     </select>
+    <input type="text" placeholder="Item..." />
+    <button>Add</button>
   </form>
   );
 }
