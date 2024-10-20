@@ -79,7 +79,7 @@ function PackingList({ items }) {
   );
 }
 
-function Item({item}) {
+function Item({ item }) {
   return 
   <li>
     <span style={item.packed ? { textDecoration: "line-through" } : {}}>
