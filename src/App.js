@@ -12,23 +12,23 @@ export default function App() {
     setItems((items) => [...items, item]);
   }
 
-  return <div className="app">
-    <Logo />
-    <Form onAddItems={handleAddItems}/>
-    <PackingList items={items}/>
-    <Stats />
-  </div>
+  return (
+    <div className="app">
+      <Logo />
+      <Form onAddItems={handleAddItems}/>
+      <PackingList items={items}/>
+      <Stats />
+    </div>
+  );
 }
 
 function Logo() {
   return <h1>🏝️ Far Away 🧳</h1>;
 }
 
-function Form({onAddItems}) {
+function Form({ onAddItems }) {
   const [description, setDescription] = useState("");
   const [quantity, setQuantity] = useState(1);
-  
-
   
   function handleSubmit(e) {
     e.preventDefault();
@@ -36,14 +36,14 @@ function Form({onAddItems}) {
     if (!description) return;
 
     const newItem = { description, quantity, packed: 
-      false, id: Date.now()};
+      false, id: Date.now() };
       console.log(newItem);
 
       onAddItems(newItem);
 
-    setDescription("");
-    setQuantity(1);
-  }
+      setDescription("");
+      setQuantity(1);
+    }
 
     
 
