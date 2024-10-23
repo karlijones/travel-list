@@ -81,14 +81,16 @@ function PackingList({ items, onDeleteItem }) {
 }
 
 function Item({ item, onDeleteItem }) {
-  return 
-  <li>
-    <span style={item.packed ? { textDecoration: "line-through" } : {}}>
-    {item.quantity}{item.description}
-    </span>
-    <button onClick={() => onDeleteItem(item.id)}>❌</
-    button>
-  </li>
+  return (
+    <li>
+      <span style={item.packed ? { textDecoration: 
+      "line-through" } : {}}>
+        {item.quantity}{item.description}
+      </span>
+      <button onClick={() => onDeleteItem(item.id)}>❌</
+      button>
+    </li>
+  );
 }
 
 function Stats() {
