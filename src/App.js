@@ -78,26 +78,29 @@ function Form({ onAddItems }) {
   );
 }
 
-function PackingList({ items, onDeleteItem, onToggleItem }) {
-  return (
-    <div className="list">
-      <ul>
-      {items.map(item=> (
-        <Item item={item}  
-        onDeleteItem={onDeleteItem}
-        onToggleItem={onToggleItem}
-        key={item.id} />
-        ))}
-      </ul>
+function PackingList({ items, onDeleteItem, 
+  onToggleItem }) {
+    const [sortBy, setSortBy] = useState("input");
 
-      <div className="actions">
-        <select>
-          <option value="input">Sort by input order</option>
-          <option value="description">Sort by description</option>
-          <option value="packed">Sort by packed status</option>
-        </select>
+    return (
+      <div className="list">
+        <ul>
+        {items.map(item=> (
+          <Item item={item}  
+          onDeleteItem={onDeleteItem}
+          onToggleItem={onToggleItem}
+          key={item.id} />
+          ))}
+        </ul>
+
+        <div className="actions">
+          <select value={sortBy} onChange={e=>setSortBy(event.target.value)}>
+            <option value="input">Sort by input order</option>
+            <option value="description">Sort by description</option>
+            <option value="packed">Sort by packed status</option>
+          </select>
+        </div>
       </div>
-    </div>
   );
 }
 
