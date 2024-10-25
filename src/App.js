@@ -118,7 +118,7 @@ function Stats(items) {
       <em>Start adding some items to your packing list 🚀
       </em>
     </p>
-  );
+    );
 
   const numItems = items.length;
   const numPacked = items.filter(item=>item.packed).length;
