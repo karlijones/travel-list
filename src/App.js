@@ -104,23 +104,21 @@ function PackingList({ items, onDeleteItem,
   );
 }
 
-function Item({ item, onDeleteItem, onToggleItem }) {
+function Item( { item, onDeleteItem, onToggleItem }) {
   return (
     <li>
-      <input 
-      type="checkbox" 
-      value={item.packed} 
-      onChange={() => onToggleItem(item.id)} 
+      <input type="checkbox"
+      value={Item.packed}
+      onChange={() => onToggleItem(Item.id)}
       />
-      <span style={item.packed ? { textDecoration: 
-      "line-through" } : {}}>
-        {item.quantity} {item.description}
+      <span style={item.packed ? {textDecoration: "line-through" } : {}}>
+        {Item.quantity} {Item.description}
       </span>
-      <button onClick={() => onDeleteItem(item.id)}>❌</
-      button>
+      <button onClick={() => onDeleteItem(item.id)}>❌</button>
     </li>
   );
 }
+
 
 function Stats(items) {
   if(!items.length) 
