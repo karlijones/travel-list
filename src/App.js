@@ -21,7 +21,9 @@ export default function App() {
   }
 
   function handleClearList() {
-    setItems([]);
+    const confirmed = window.confirm("Are you sure you want to delete all items?");
+    
+    if (confirmed) setItems([]);
   }
 
   return (
@@ -123,10 +125,11 @@ function PackingList({ items, onDeleteItem,
   );
 }
 
-function Item( { item, onDeleteItem, onToggleItem }) {
+function Item({ item, onDeleteItem, onToggleItem }) {
   return (
     <li>
-      <input type="checkbox"
+      <input 
+      type="checkbox"
       value={Item.packed}
       onChange={() => onToggleItem(Item.id)}
       />
