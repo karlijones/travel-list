@@ -82,6 +82,10 @@ function PackingList({ items, onDeleteItem,
   onToggleItem }) {
     const [sortBy, setSortBy] = useState("input");
 
+    let sortedItems;
+
+    if (sortBy === "input") sortedItems = items;
+
     return (
       <div className="list">
         <ul>
