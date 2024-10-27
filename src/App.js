@@ -130,11 +130,11 @@ function Item({ item, onDeleteItem, onToggleItem }) {
     <li>
       <input 
       type="checkbox"
-      value={Item.packed}
-      onChange={() => onToggleItem(Item.id)}
+      value={item.packed}
+      onChange={() => onToggleItem(item.id)}
       />
-      <span style={item.packed ? {textDecoration: "line-through" } : {}}>
-        {Item.quantity} {Item.description}
+      <span style={item.packed ? { textDecoration: "line-through" } : {}}>
+        {item.quantity} {item.description}
       </span>
       <button onClick={() => onDeleteItem(item.id)}>❌</button>
     </li>
